@@ -39,7 +39,7 @@ global {
         // 3. NEW: Find the 4 largest buildings (excluding school and isolation building) to be workplaces
         list<building> available_buildings <- building where (each != the_school and each != isolation_building);
         workplaces <- [];
-        loop i from: 0 to: 50 {
+        loop i from: 0 to: 50	 {
             if (length(available_buildings) > 0) {
                 building big_workplace <- available_buildings with_max_of (each.shape.area);
                 add big_workplace to: workplaces;
